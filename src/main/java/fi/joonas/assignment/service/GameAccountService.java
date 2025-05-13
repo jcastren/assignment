@@ -47,7 +47,7 @@ public class GameAccountService {
         } else {
             GameEvent gameEvent = optGameEvent.get();
             if (!gameEvent.getCustomer().getId().equals(customer.getId())) {
-                return ResponseHandler.buildResponse("Event with id %s found but belongs to another user".formatted(event.getGameEventId()), HttpStatus.BAD_REQUEST, 0.0);
+                return ResponseHandler.buildResponse("Event with id %s found but belongs to another customer".formatted(event.getGameEventId()), HttpStatus.BAD_REQUEST, 0.0);
             }
             if (!gameEvent.getEventType().equals(GameEvent.TransactionType.PURCHASE.name())) {
                 return ResponseHandler.buildResponse("Event with id %s found but doesn't match transaction type".formatted(event.getGameEventId()), HttpStatus.BAD_REQUEST, 0.0);
@@ -74,7 +74,7 @@ public class GameAccountService {
         } else {
             GameEvent gameEvent = optGameEvent.get();
             if (!gameEvent.getCustomer().getId().equals(customer.getId())) {
-                return ResponseHandler.buildResponse("Event with id %s found but belongs to another user".formatted(event.getGameEventId()), HttpStatus.BAD_REQUEST, 0.0);
+                return ResponseHandler.buildResponse("Event with id %s found but belongs to another customer".formatted(event.getGameEventId()), HttpStatus.BAD_REQUEST, 0.0);
             }
             if (!gameEvent.getEventType().equals(GameEvent.TransactionType.WIN.name())) {
                 return ResponseHandler.buildResponse("Event with id %s found but doesn't match transaction type".formatted(event.getGameEventId()), HttpStatus.BAD_REQUEST, 0.0);
