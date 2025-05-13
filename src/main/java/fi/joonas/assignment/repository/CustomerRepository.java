@@ -1,0 +1,7 @@
+package fi.joonas.assignment.repository;
+
+import fi.joonas.assignment.jpaentity.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+}
